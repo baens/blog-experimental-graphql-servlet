@@ -1,0 +1,17 @@
+type Link {
+  url: String!
+  description: String!
+}
+
+type LinkQuery {
+  allLinks(filter: LinkFilter): [Link]
+}
+
+schema {
+  query: LinkQuery
+}
+
+input LinkFilter {
+  description_contains: String
+  url_contains: String
+}
